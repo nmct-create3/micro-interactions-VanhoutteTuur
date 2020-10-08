@@ -71,6 +71,11 @@
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+    --global-input-error-borderColor: orangered;
+
+    /* TODO */
+    --global-color-error: crimson;
+    
 }
 
 /*------------------------------------*\
@@ -606,6 +611,12 @@ input::placeholder {
     Everything form related here
 */
 
+.has-error {
+  --label-color: var(--global-color-error);
+  --input-borderColor: var(--global-input-error-borderColor);
+}
+
+
 .c-form-field--option {
     display: flex;
     align-items: center;
@@ -617,12 +628,13 @@ input::placeholder {
     Class to put on all input="text" like form inputs
 */
 
-.c-input {       
+
+.c-input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: 1px solid var(--global-input-borderColor);
+    border: var(--global-borderWidth) solid var(--input-borderColor, var(--global-input-borderColor));
     border-radius: var(--global-borderRadius);
     background-color: var(--global-input-backgroundColor);
     color: var(--global-input-color);
@@ -633,6 +645,11 @@ input::placeholder {
     outline: none;
     transition: border var(--global-transition-timing-alpha), box-shadow var(--global-transition-timing-alpha);
 }
+
+.c-input:invalid {
+    box-shadow: unset;
+}
+
 
 .c-input:hover {
     border-color: var(--global-input-hover-borderColor);
@@ -666,12 +683,13 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-    --label-color: var(--global-color-neutral-xx-dark);
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 0;
     padding-bottom: var(--global-whitespace-sm);
     font-size: 14px;
     line-height: 16px;
-    color: var(--label-color);
+    color: var(--label-color, var(--global-color-neutral-xx-dark));
 }
 
 .c-label--option {
@@ -936,6 +954,58 @@ more padding on the right to avoid overlap
     Password toggle custom checkbox
 */
 
+.c-password-toggle-container {
+    position: relative;
+    display: block;
+}
+
+.c-password-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
+.c-password-toggle__label {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+
+    cursor: pointer;
+}
+
+.c-password-toggle__symbol {
+    display: block;
+    fill: var(--global-color-neutral-x-light);
+    height: 20px;
+    width: 20px;
+}
+
+/* symbol staat sandaard op block */
+.c-password-toggle__symbol--show {
+    display: block;
+}
+
+/* symbol staat sandaard op none */
+.c-password-toggle__symbol--hide {
+    display: none;
+}
+
+/* als checkbox:checked, --hide == block */
+.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide {
+    display: block;
+}
+
+/* als checkbox:checked, --show == none */
+.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
+    display: none;
+}
+
+
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
@@ -1036,6 +1106,10 @@ more padding on the right to avoid overlap
 
 .u-text-sm {
     font-size: 14px;
+}
+
+.u-text--right {
+    text-align: right;
 }
 
 /*
