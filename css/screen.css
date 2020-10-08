@@ -621,7 +621,7 @@ input::placeholder {
 }
 
 .c-form-field:focus-within .c-label--floating {
-    transform: translateY(-24px);
+    transform: translateY(-30px);
 }
 
 .c-form-field--option {
@@ -712,7 +712,7 @@ more padding on the right to avoid overlap
 }
 
 .is-floating {
-    transform: translateY(-24px);
+    transform: translateY(-30px);
 }
 
 .c-label--option {
