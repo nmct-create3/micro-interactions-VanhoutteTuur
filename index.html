@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
         
-        <script src="script/validation.js"></script>
+        <script src="script/floatingLabels.js"></script>
+        <!-- <script src="script/validation.js"></script> -->
 
     </head>
     <body>
@@ -38,18 +39,16 @@
                         </h2>
                         <p class="c-form-field js-email-field">
                             <label class="c-label" for="username">
-                                Email address
+                                <span class="c-label--floating js-email-label">Email address</span>
                                 <span class="u-text--right js-email-error"></span>
                             </label>
-                            
-                            <input class="c-input js-email-input" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required>
+                            <input class="c-input js-email-input" type="email" name="username" id="username" required>
                         </p>
                         <p class="c-form-field js-password-field">
                             <label class="c-label" for="password">
-                                Password
+                                <span class="c-label--floating js-password-label">Password</span>
                                 <span class="u-text--right js-password-error"></span>
-                            </label>    
-                            
+                            </label>
                             <input class="c-input js-password-input" type="password" name="password" id="password" required>
                         </p>
                         <!-- Custom checkbox -->

@@ -616,6 +616,13 @@ input::placeholder {
   --input-borderColor: var(--global-input-error-borderColor);
 }
 
+.c-form-field {
+    position: relative;
+}
+
+.c-form-field:focus-within .c-label--floating {
+    transform: translateY(-24px);
+}
 
 .c-form-field--option {
     display: flex;
@@ -690,6 +697,22 @@ more padding on the right to avoid overlap
     font-size: 14px;
     line-height: 16px;
     color: var(--label-color, var(--global-color-neutral-xx-dark));
+}
+
+.c-label--floating {
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    padding: 4px 8px;
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 200ms ease-in-out;
+    box-shadow: 0 0 4px 4px rgba(255,255,255,0.8);
+    background: white;
+}
+
+.is-floating {
+    transform: translateY(-24px);
 }
 
 .c-label--option {

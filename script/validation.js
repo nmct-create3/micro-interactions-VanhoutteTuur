@@ -118,6 +118,6 @@ const enableListeners = function () {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-	getDOMElements();
+    getDOMElements();
 	enableListeners();
 });

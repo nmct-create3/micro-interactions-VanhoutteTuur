@@ -3,10 +3,6 @@ let html_passwordToggle;
 
 
 
-function handleLoginValidation() {}
-
-function handleFloatingLabel() {}
-
 function handlePasswordSwitcher() {
 	html_passwordInput = document.querySelector(".js-password-input");
 	html_passwordToggle = document.querySelector(".js-password-toggle");
@@ -22,10 +18,5 @@ function handlePasswordSwitcher() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	console.log("Script loaded!");
-
-	handleFloatingLabel();
     handlePasswordSwitcher();
-    getDOMElements();
-
-    handleLoginValidation();
 });
