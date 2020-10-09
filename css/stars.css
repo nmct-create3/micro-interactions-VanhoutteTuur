@@ -1,0 +1,55 @@
+html {
+    background-color: rgb(233, 252, 255);
+    font-family: 'Helvetica Neue', 'Segoe';
+    font-size: 16px;
+}
+
+.o-centered {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.c-rating {
+    padding: 0;
+    margin: 0;
+}
+
+.c-rating__input {
+
+}
+
+.c-rating__input:focus + .c-rating__label .c-rating__symbol {
+    filter: drop-shadow(0 1px 1px rgba(255, 220, 23, .4));
+}
+
+.c-rating__input:checked + .c-rating__label .c-rating__symbol {
+    fill: rgb(255, 220, 23);
+}
+
+.c-rating__label {
+
+}
+
+.c-rating__symbol {
+    height: 1.5rem;
+    fill: #ccc;
+    stroke: none;
+}
+
+.c-rating--checked + .c-rating__label .c-rating__symbol {
+    fill: rgb(255, 220, 23);
+}
