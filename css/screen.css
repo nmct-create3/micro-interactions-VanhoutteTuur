@@ -75,6 +75,8 @@
 
     /* TODO */
     --global-color-error: crimson;
+
+    --global-color-like: #D80027;
     
 }
 
@@ -621,7 +623,7 @@ input::placeholder {
 }
 
 .c-form-field:focus-within .c-label--floating {
-    transform: translateY(-30px);
+    transform: translateY(-24px);
 }
 
 .c-form-field--option {
@@ -712,7 +714,7 @@ more padding on the right to avoid overlap
 }
 
 .is-floating {
-    transform: translateY(-30px);
+    transform: translateY(-24px);
 }
 
 .c-label--option {
@@ -1025,6 +1027,47 @@ more padding on the right to avoid overlap
 /* als checkbox:checked, --show == none */
 .c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
     display: none;
+}
+
+
+/*
+    Component: Like button
+    ---
+    Custom like button with micro interaction
+*/
+
+.c-like {
+
+}
+
+.c-like__label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.c-like__symbol {
+    height: 24px;
+    fill: var(--global-color-neutral-x-light);
+    transition: fill 0.15s, transform 0.5s ease-out;
+}
+
+.c-like__fake-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-like__fake-input:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-out;
+}
+
+
+
+.c-like__input:checked + .c-like__label .c-like__symbol {
+    fill: red;
+    transform: rotate(360deg);
 }
 
 
